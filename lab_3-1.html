@@ -1,0 +1,94 @@
+<!DOCTYPE HTML><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ЛР3. Шайдуллина Д.Р.</title>
+
+<script type="text/javascript" src="jquery-3.5.0.js">
+</script>
+
+
+<script>
+	let tek = 5;
+	function morenews(str) {
+		if (str.length==0) {
+		document.getElementById("news").innerHTML="";
+		return;
+		}
+		if (window.XMLHttpRequest) {
+			xmlhttp=new XMLHttpRequest();
+		} else {  
+			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.onreadystatechange=function() {
+			if (this.readyState==4 && this.status==200) {
+				  document.getElementById("news").innerHTML=this.responseText;
+			}}
+		   xmlhttp.open("GET","rss.php?tek="+tek,true);
+		   xmlhttp.send();
+		   tek+=5;}
+ </script>
+</head>
+<body>
+	<h2>Задание 1.</h2>
+	<div style='width: 500px; border: 3px solid white; background-color: white'>
+		<h3 style="font-weight: bold">
+			ВОЗ одобрила еще одну вакцину от коронавируса — китайскую Sinovac-CoronaVac.
+
+		</h3>
+		<p>
+			На данный момент это уже седьмой одобренный препарат против коронавируса
+
+		</p>
+		<img src="https://sun2.ufanet.userapi.com/impg/o2CUvhyeW37WZVZyrHiqClOpF33TSZFTSjxqSQ/UBL18W-63xw.jpg?size=771x895&quality=96&sign=5a4ef918e9f4c7354ae2ab0139199f93&type=album" alt="" style='width: 400px;'>
+	</div>
+	<br> <hr>
+	<div style='width: 500px; border: 3px solid white; background-color: white'>
+		<h3 style="font-weight: bold">
+			В Испании женщину приговорили к 6 месяцам заключения и штрафу в 3600 евро за установку пиратских версий MS Office и Windows.
+		</h3>
+		<p>
+			Это первый в стране прецедент обвинительного приговора по данной статье, начиная с 2015 года
+		</p>
+		<img src="https://i.playground.ru/p/jjI1ZUY_QUru3p4g0o8AEg.jpeg" alt="" style='width: 400px;'>
+	</div>
+	<br><hr>
+	<div style='width: 500px; border: 3px solid white; background-color: white'>
+		<h3 style="font-weight: bold">
+			В США мальчик продал свою коллекцию карточек Pokemon ради лечения щенка.
+
+		</h3>
+		<p>
+			8-летний Брайсон Климанн узнал, что его щенок по кличке Брюс заболел парвовирусом — смертельным вирусом желудка. Лечение таких недугов стоит денег — 700 долларов оказались слишком неожиданной суммой для семейного бюджета, и тогда Брайсон решил взять инициативу на себя. Его матери прислали фото, как мальчик сидит на дороге и продаёт свои коллекционные карточки с персонажами из вселенной Pokemon. После этого мама решила открыть сбор средств в интернете. <br>
+
+Нужная сумма набралась всего за пару дней, а на данный момент сумма пожертвований перевалила за 5,5 тысяч долларов. Семья пообещала пожертвовать оставшуюся сумму в фонды помощи больным животным. Создатели Pokemon также узнали об этой истории и прислали Брайсону коробку с редкими карточками его любимой игры
+		</p>
+		<img src="https://sun2.ufanet.userapi.com/impg/IpxtHz4DId_yBRq2Tvn4S04n74jOsQGGSDnv4w/JpI5gFOAfJo.jpg?size=832x1164&quality=96&sign=21fe74dae9f7b722dd7e5905b57bed09&type=album" alt="" style='width: 400px;'>
+	</div>
+	<br><hr>
+	<div style='width: 500px; border: 3px solid white; background-color: white'>
+		<h3 style="font-weight: bold">
+			Ко Дню защиты детей ВК совместно с благотворительным фондом «Свет» выпустили стикеры с вот таким милашным панголином Пини
+		</h3>
+		<p>
+			Прибыль от продажи стикеров отправится на помощь детям с онкологическими заболеваниями
+		</p>
+		<img src="https://sun2.ufanet.userapi.com/impg/KEdrnWJMulklx2ELgdCaPon3Gk8iXs6WXUV4Fg/FjsFtSdLkJk.jpg?size=653x636&quality=96&sign=f8d485526895c1e956f2d83f8da3d2e9&type=album" alt="" style='width: 400px;'>
+	</div>
+	<br><hr>
+	<div style='width: 500px; border: 3px solid white; background-color: white'>
+		<h3 style="font-weight: bold">
+			Hеизвестный мужчина открыл огонь из окна дома по прохожим в Екатеринбурге.
+
+		</h3>
+		<p>
+			По предварительным данным, стрелок — бывший сотрудник МВД, он ранил двух человек, сообщает Baza
+		</p>
+		<img src="https://sun2.ufanet.userapi.com/impg/tPe5zxPx1SCnxrNgCJJ76OGAzy3imB80Qqs1rw/Evqfsci7SlE.jpg?size=1000x1000&quality=96&sign=2745218b873cb1501689cd8377f45ace&type=album" alt="" style='width: 400px;'>
+	</div>
+	<br><hr>
+	<span id = "news"></span>
+	<form>
+		<input onclick = "morenews(this.value)" type="button" value="загрузить" style="background-color: white; border-color: white;">
+	</form>
+
+</body></html>
